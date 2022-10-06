@@ -53,7 +53,7 @@ def packets(packet):
                 rmac = gmac(packet[sc.ARP].psrc)
                 resmac = packet[sc.ARP].hwsrc
                 if rmac != resmac:
-                    print("[Warning] --> Your are under attack......")
+                    print("[Warning] --> ARP spoofing attack detected ......")
             except IndexError:
                 pass
         except:
@@ -68,4 +68,6 @@ def packets(packet):
             print("\n [Author] Eng.Mostafa Ahmad - Cybersecurity Expert and \"XEye\" founder.")
             exit()
 iface = input("[Required] --> Please enter the Interface to check on: ")
+print("[Info]--> XEye-asd will detect if any ARP apoofing attack against "+iface+" interface")
+time.sleep(1)
 sniff(str(iface))

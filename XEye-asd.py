@@ -37,6 +37,7 @@ def Checkroot():
     else:
         print("\n\n [Warning] --> You are not root - Please run the tool with \"sudo\" command \n ")
         exit()
+Checkroot()
 def gmac(ip):
     areq = sc.ARP(ip)
     bcast = sc.Ether(dst="ff:ff:ff:ff:ff:ff")
@@ -66,5 +67,5 @@ def packets(packet):
             print("*******************************************************************************************************")
             print("\n [Author] Eng.Mostafa Ahmad - Cybersecurity Expert and \"XEye\" founder.")
             exit()
-iface = input("[Required] --> Please enter the Interface to check on ")
+iface = input("[Required] --> Please enter the Interface to check on: ")
 sniff(str(iface))

@@ -49,24 +49,22 @@ def sniff(iface):
 def packets(packet):
     if packet.haslayer(sc.ARP) and packet[sc.ARP].op == 2:
         try:
-            try:
-                rmac = gmac(packet[sc.ARP].psrc)
-                resmac = packet[sc.ARP].hwsrc
-                if rmac != resmac:
-                    print("[Warning] --> ARP spoofing attack detected ......")
-            except IndexError:
-                pass
-        except:
-            print("\t\t\t\t[*] Thanks for using XEye-asd. Below are our Ethical Hacking courses recommended for you:) [*]")
-            print("\n [***] --> The Ultimate Social Media OSINT Hacking Bundle: https://rb.gy/xgrdmv")
-            print(" [***] --> Instagram OSINT Hacking for Ethical Hackers and OSINTeers: https://rb.gy/glnllu")
-            print(" [***] --> Facebook OSINT Hacking for Ethical Hackers and OSINTeers: https://rb.gy/ymzseh")
-            print(" [***] --> Twitter OSINT Hacking for Ethical Hackers and OSINTeers: https://rb.gy/hogdor")
-            print(" [***] --> The Optimal Introduction to Ethical Hacking: https://rb.gy/kanwhs")
-            print(" [***] --> Kali Linux For Ethical Hackers and Penetration Testers: https://rb.gy/cyw562")
-            print("*******************************************************************************************************")
-            print("\n [Author] Eng.Mostafa Ahmad - Cybersecurity Expert and \"XEye\" founder.")
-            exit()
+            rmac = gmac(packet[sc.ARP].psrc)
+            resmac = packet[sc.ARP].hwsrc
+            if rmac != resmac:
+                print("[Warning] --> ARP spoofing attack detected ......")
+        except IndexError:
+            pass
+#             print("\t\t\t\t[*] Thanks for using XEye-asd. Below are our Ethical Hacking courses recommended for you:) [*]")
+#             print("\n [***] --> The Ultimate Social Media OSINT Hacking Bundle: https://rb.gy/xgrdmv")
+#             print(" [***] --> Instagram OSINT Hacking for Ethical Hackers and OSINTeers: https://rb.gy/glnllu")
+#             print(" [***] --> Facebook OSINT Hacking for Ethical Hackers and OSINTeers: https://rb.gy/ymzseh")
+#             print(" [***] --> Twitter OSINT Hacking for Ethical Hackers and OSINTeers: https://rb.gy/hogdor")
+#             print(" [***] --> The Optimal Introduction to Ethical Hacking: https://rb.gy/kanwhs")
+#             print(" [***] --> Kali Linux For Ethical Hackers and Penetration Testers: https://rb.gy/cyw562")
+#             print("*******************************************************************************************************")
+#             print("\n [Author] Eng.Mostafa Ahmad - Cybersecurity Expert and \"XEye\" founder.")
+#             exit()
 iface = input("[Required] --> Please enter the Interface to check on: ")
 print("[Info]--> XEye-asd will detect if any ARP apoofing attack against "+iface+" interface")
 time.sleep(1)

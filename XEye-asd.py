@@ -63,7 +63,7 @@ def packets(packet):
 #             print(" [***] --> The Optimal Introduction to Ethical Hacking: https://rb.gy/kanwhs")
 #             print(" [***] --> Kali Linux For Ethical Hackers and Penetration Testers: https://rb.gy/cyw562")
 #             print("*******************************************************************************************************")
-#             print("\n [Author] Eng.Mostafa Ahmad - Cybersecurity Expert and \"XEye\" founder.")
+#             print("\n XEye Academy --> https://academy.XEyecs.com ")
 #             exit()
 iface = input("[Required] --> Please enter the Interface to check on: ")
 print("[Info]--> XEye-asd will detect if any ARP apoofing attack against "+iface+" interface")
